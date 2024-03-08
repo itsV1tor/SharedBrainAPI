@@ -2,16 +2,22 @@
   "name": "shared-brain-api",
   "version": "1.0.0",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "format": "npx prettier . --write"
+    "format": "npx prettier . --write",
+    "dev": "nodemon ./src/server.js",
+    "latest": "npx knex migrate:latest"
   },
   "author": "H4kv",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.3",
-    "express-async-errors": "^3.1.1"
+    "express-async-errors": "^3.1.1",
+    "knex": "^3.1.0",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
+    "nodemon": "^3.1.0",
     "prettier": "3.2.5"
   }
 }
