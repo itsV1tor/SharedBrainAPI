@@ -1,11 +1,14 @@
 import 'express-async-errors';
 import { AppError } from './utils/AppError.js';
 import express from 'express';
+import cors from 'cors';
 import { routes } from './routes/index.js';
+import { corsOptions } from '../corsoption.js';
 
 const PORT = process.env.PORT || 8000;
 const app = express();
 
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(routes);
 app.use((error, request, response, next) => {
